@@ -207,6 +207,7 @@ public class AvailableCommands implements MinecraftPacket {
             .literal(ProtocolUtils.readString(buf)));
       case NODE_TYPE_ARGUMENT:
         String name = ProtocolUtils.readString(buf);
+        System.out.println("Name of the string received from player buf is: " name);
         ArgumentType<?> argumentType = ArgumentPropertyRegistry.deserialize(buf, version);
 
         RequiredArgumentBuilder<CommandSource, ?> argumentBuilder = RequiredArgumentBuilder
